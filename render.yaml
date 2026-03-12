@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: flowise
+    env: docker
+    plan: free
+    region: singapore
+    branch: main
+    autoDeploy: true
+
+    envVars:
+      - key: PORT
+        value: "3000"
+
+      - key: FLOWISE_USERNAME
+        value: admin
+
+      - key: FLOWISE_PASSWORD
+        value: strong-password-here
+
+    healthCheckPath: /
